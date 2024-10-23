@@ -1,12 +1,12 @@
 import NavBar from './ui/NavBar';
 import { Outlet } from 'react-router-dom';
 
-export default function Layout() {
+export default function Layout({ user, logoutHandler }) {
   return (
     <div className="container">
       <div className="row">
         <div className="col">
-          <NavBar />
+          <NavBar  user={user} logoutHandler={logoutHandler}/>
         </div>
       </div>
       <div className="row">
@@ -15,6 +15,5 @@ export default function Layout() {
         </div>
       </div>
     </div>
-    // <div>Layout</div>
   );
 }

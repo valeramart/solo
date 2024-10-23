@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function BasicExample() {
+function BasicExample({ user, logoutHandler }) {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -14,6 +14,11 @@ function BasicExample() {
             <Nav.Link href="/bot">Бот</Nav.Link>
             <Nav.Link href="/products">Товары</Nav.Link>
             <Nav.Link href="/basket">Корзина</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            
             <Nav.Link href="/login">Войти</Nav.Link>
             <Nav.Link href="/signup">Зарегистрироваться</Nav.Link>
           </Nav>

@@ -12,7 +12,7 @@ import axiosInstance, { setAccessToken } from './services/axiosInstance';
 
 
 function App() {
-  const [user, setUser] = useState(null); 
+  const [user, setUser] = useState();
 
   useEffect(() => {
     axiosInstance
@@ -25,6 +25,27 @@ function App() {
         setUser(null);
       });
   }, []);
+
+  const signupHandler = async (e, formData) => {
+    e.preventDefault();
+    const response = await axiosInstance.post('/auth/signup', formData);
+    setUser(response.data.user);
+    setAccessToken(response.data.accessToken);
+  };
+
+  const loginHandler = async (e, formData) => {
+    e.preventDefault();
+    const response = await axiosInstance.post('/auth/login', formData);
+    setUser(response.data.user);
+    setAccessToken(response.data.accessToken);
+  };
+
+  // const logoutHandler = async () => {
+  //   await axiosInstance.get('/auth/logout');
+  //   setUser(null);
+  //   setAccessToken('');
+  // };
+
 
   const router = createBrowserRouter([
     {
@@ -49,13 +70,14 @@ function App() {
         },
         {
           path: '/login',
-          element: <LoginPage  />,
+          element: <LoginPage  loginHandler={loginHandler}/>,
         },
         {
           path: '/signup',
-          element: <SignupPage />,
+          element: <SignupPage signupHandler={signupHandler}/>,
         },
-]}
+],
+},
 ])
 return <RouterProvider router={router} />;
 }

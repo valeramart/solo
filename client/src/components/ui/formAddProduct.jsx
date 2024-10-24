@@ -1,3 +1,33 @@
+// import Button from "react-bootstrap/Button";
+// import Form from "react-bootstrap/Form";
+
+// function formAddProduct() {
+//   // * Управляемая форма - это форма, у которой
+//   // * её value и изменение value зависят от стейта
+
+//   return (
+//     <Form >
+//       <Form.Group className="mb-3" controlId="formBasicEmail">
+//         <Form.Label>Title</Form.Label>
+//         <Form.Control 
+//           name="title" type="text" placeholder="Enter email" 
+//         />
+//       </Form.Group>
+//       <Form.Group className="mb-3" controlId="formBasicPassword">
+//         <Form.Label>Text</Form.Label>
+//         <Form.Control 
+//           name="text" type="text" placeholder="Password" 
+//         />
+//       </Form.Group>
+//       <Button variant="primary" type="submit">
+//         Submit
+//       </Button>
+//     </Form>
+//   );
+// }
+
+// export default formAddProduct;
+
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';

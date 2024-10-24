@@ -28,28 +28,27 @@ function App() {
 
   const signupHandler = async (e, formData) => {
     e.preventDefault();
-    const response = await axiosInstance.post('/auth/signup', formData);
+    const response = await axiosInstance.post('/signup', formData);
     setUser(response.data.user);
     setAccessToken(response.data.accessToken);
   };
 
   const loginHandler = async (e, formData) => {
     e.preventDefault();
-    const response = await axiosInstance.post('/auth/login', formData);
+    const response = await axiosInstance.post('/login', formData);
     setUser(response.data.user);
     setAccessToken(response.data.accessToken);
   };
 
-  // const logoutHandler = async () => {
-  //   await axiosInstance.get('/auth/logout');
-  //   setUser(null);
-  //   setAccessToken('');
-  // };
-
+  const logoutHandler = async () => {
+    await axiosInstance.get('/logout');
+    setUser(null);
+    setAccessToken('');
+  };
 
   const router = createBrowserRouter([
     {
-      element: <Layout user={user}  />,
+      element: <Layout user={user}  logoutHandler={logoutHandler}/>,
       errorElement: <ErrorPage />,
       children: [
         {

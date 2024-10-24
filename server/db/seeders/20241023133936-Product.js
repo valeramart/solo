@@ -10,7 +10,6 @@ module.exports = {
           title: "Лимон",
           text: "Цена указана за килограм",
           img: "",
-          userId: 1,
           price: 168,
           createdAt: new Date(),
           updatedAt: new Date(),

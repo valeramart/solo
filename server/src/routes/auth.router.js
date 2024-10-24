@@ -2,7 +2,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const authRouter = express.Router();
 const { User } = require('../../db/models');
-const generateTokens = require('../utils/generateTokens');
+const generateTokens = require('../utils/generateToken');
 const cookieConfig = require('../configs/cookieConfig');
 
 authRouter.post('/signup', async (req, res) => {
@@ -27,7 +27,6 @@ authRouter.post('/signup', async (req, res) => {
 
 authRouter.post('/login', async (req, res) => {
   const { email, password } = req.body;
-
   const targetUser = await User.findOne({ where: { email } });
   if (!targetUser) {
     return res.status(400).json({ text: 'Неверная пара логин-пароль' });

@@ -8,7 +8,6 @@ function BasicExample({signupHandler}) {
     email: '',
     name: '',
     password: '',
-    confirmPassword: '',
   });
 
   const handleChange = (e) =>
@@ -30,7 +29,7 @@ function BasicExample({signupHandler}) {
         Мы никогда не передадим ваш адрес электронной почты кому-либо еще.
         </Form.Text>
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label>Ваше имя</Form.Label>
         <Form.Control type="text"
               name="name"

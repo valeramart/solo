@@ -12,11 +12,29 @@ function BasicExample({ user, logoutHandler }) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            {/* <Nav.Link href="/bot">Бот</Nav.Link> */}
-            <Nav.Link as={RouterLink} to="/products">Направления</Nav.Link>
-            <Nav.Link as={RouterLink} to="/basket">Избранное</Nav.Link>
+            {/* <Nav.Link as={RouterLink} to="/products">Направления</Nav.Link> */}
+            <Nav.Link as={RouterLink} to="/basket">Избранное ♡</Nav.Link>
           </Nav>
         </Navbar.Collapse>
+
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+             {user ? (
+              <>{user?.role === 'ADMIN' ? (
+                <>
+                <Nav.Link as={RouterLink} to="/products">Панель админа</Nav.Link> 
+                </>
+              ) : (
+                <>
+                <Nav.Link as={RouterLink} to="/productsUser">Направления</Nav.Link>
+                </>
+              )}</>
+             ) : (
+              <> </>
+             )}
+          </Nav>
+        </Navbar.Collapse>
+
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
               {user ? (

@@ -45,7 +45,7 @@ function BasicExample({signupHandler}) {
               value={formData.password}
               onChange={handleChange} />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" >
         Зарегистрироваться
       </Button>
     </Form>

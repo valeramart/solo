@@ -8,6 +8,7 @@ import SignupPage from './components/pages/SignupPage';
 import BotPage from './components/pages/BotPage';
 import ProductPage from './components/pages/ProductsPage';
 import BasketPage from './components/pages/BasketPage';
+import ProductPageUser from './components/pages/productsUser';
 import axiosInstance, { setAccessToken } from './services/axiosInstance';
 
 
@@ -62,6 +63,10 @@ function App() {
         {
           path: '/products',
           element: <ProductPage user={user}/>,
+        },
+        {
+          path: '/productsUser',
+          element: <ProductPageUser/>,
         },
         {
           path: '/basket',

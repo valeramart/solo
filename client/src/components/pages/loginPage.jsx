@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-function BasicExample({ loginHandler}) {
+function BasicExample({ loginHandler, submitHandler}) {
   // const [showPass, setShowPass] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
@@ -36,7 +36,7 @@ function BasicExample({ loginHandler}) {
                 value={formData.password}
                 onChange={handleChange} />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" >
         Войти
       </Button>
     </Form>

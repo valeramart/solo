@@ -12,7 +12,7 @@ productRouter.post("/products", async (req, res) => {
   }
 });
 
-router.get("/new", checkReq, async (req, res) => {
+productRouter.get("/new", checkReq, async (req, res) => {
   try {
     const { text, title, price } = req.query;
     const newProduct = await Product.create({ title, text });
@@ -23,7 +23,7 @@ router.get("/new", checkReq, async (req, res) => {
   }
 });
 
-router.post("/new", checkReq, async (req, res) => {
+productRouter.post("/new", checkReq, async (req, res) => {
   try {
     const { text, title, price } = req.body;
     const newProduct = await Product.create({ title, text });
@@ -33,3 +33,5 @@ router.post("/new", checkReq, async (req, res) => {
     res.status(500).send("Ошибка создания одной записи:", error.message);
   }
 });
+
+module.exports = productRouter;

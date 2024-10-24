@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-function BasicExample({ loginHandler, submitHandler}) {
+function BasicExample({ loginHandler}) {
   // const [showPass, setShowPass] = useState(false);
   const [formData, setFormData] = useState({
     email: '',

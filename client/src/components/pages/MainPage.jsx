@@ -4,31 +4,21 @@ import Accordion from 'react-bootstrap/Accordion';
 function AllCollapseExample() {
   return (
     <>
-        <div>Привет, друг!</div>
+        <div>Привет, дорогой друг!</div>
             <div>Ты попал на главную страницу нашего сайта. Можешь подробнее ознакомиться с её содержимым:</div>
     <Accordion>
       <Accordion.Item eventKey="0">
-        <Accordion.Header>Коктейльный бот</Accordion.Header>
+        <Accordion.Header>Откройте коллекцию путешествий!</Accordion.Header>
         <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          <div>На Земле много удивительных мест, от которых захватывает дух!</div>
+          <div>'ХОЧУ В ОТПУСК' предоставляет любителям путешествовать возможность увидеть весь мир, восхититься его красотой, прочувствовать историю, традиции, попробовать изыски и специфику местной кухни, позволяет отрешиться от повседневных проблем и воспарить над суетой, путешествуя по миру.</div>
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">
-        <Accordion.Header>Магазин товаров</Accordion.Header>
+        <Accordion.Header>Для настроения</Accordion.Header>
         <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+        <div>Здесь просто слова для поднятия настроения</div>
+        <div>Не переживайте, если у вас не получилось полностью реализовать функционал задуманного сайта! Все мы учимся и совершаем ошибки. Это уже большой опыт для нас))) Дальше будут более масштабные проекты. Дальше мы сможем намного быстрее прописывать все функции и не подсматривать в лекции. Мы итак прошли большой путь. Дальше - больше.</div>
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>

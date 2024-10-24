@@ -1,12 +1,10 @@
-const jwtConfig = require('./jwtConfig'); //! импорт поправить, если надо
+const jwtConfig = require('./jwtConfig');
 
-module.exports = {
-  access: {
-    maxAge: jwtConfig.access.expiresIn, // время жизни куки на основе токенов
-    httpOnly: true, // доступ к куки только по http (с фронта по js доступ запрещен))
-  },
-  refresh: {
-    maxAge: jwtConfig.refresh.expiresIn,
-    httpOnly: true,
-  },
+const cookieConfig = {
+  httpOnly: true,
+  maxAge: jwtConfig.refresh.expiresIn,
+  // secure: true,
+  // sameSite: 'strict',
 };
+
+module.exports = cookieConfig;

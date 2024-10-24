@@ -8,7 +8,6 @@ import SignupPage from './components/pages/SignupPage';
 import BotPage from './components/pages/BotPage';
 import ProductPage from './components/pages/ProductsPage';
 import BasketPage from './components/pages/BasketPage';
-import axios from 'axios';
 import axiosInstance, { setAccessToken } from './services/axiosInstance';
 
 
@@ -42,7 +41,7 @@ function App() {
   };
 
   const logoutHandler = async () => {
-    await axiosInstance.get('/logout');
+    await axiosInstance.get("/logout");
     setUser(null);
     setAccessToken('');
   };
@@ -54,7 +53,7 @@ function App() {
       children: [
         {
           path: '/',
-          element: <MainPage />,
+          element: <MainPage/>,
         },
         {
           path: '/bot',

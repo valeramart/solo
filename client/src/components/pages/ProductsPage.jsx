@@ -33,19 +33,11 @@ export default function ProductPage({ user }) {
     })()
   }, [])
 
-  // function submitHandler(e) {
-  //   e.preventDefault();
-  //   console.log("Мы молодцы!");
-  //   setEntries((prev) => [...prev, { ...inputs, id: Math.random() * 99999 }]);
-  //   setInputs((prev) => ({ ...prev, title: "", text: "", img: "", price: "" }));
-  // }
+  // useEffetc на добавление записи в бд
   async function submitHandler(e) {
     e.preventDefault();
     try {
-      console.log('inputs', inputs)
       const { data, status } = await axiosInstance.post('/products/new', inputs)
-      console.log('data', data)
-      console.log('status', status)
       if (status === 200) {
         setEntries((prev) => [...prev, data]);
         setInputs((prev) => ({ ...prev, title: "", text: "", img: "", price: ""}));

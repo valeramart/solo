@@ -5,7 +5,6 @@ import MainPage from './components/pages/MainPage';
 import ErrorPage from './components/pages/ErrorRage';
 import LoginPage from './components/pages/loginPage';
 import SignupPage from './components/pages/SignupPage';
-import BotPage from './components/pages/BotPage';
 import ProductPage from './components/pages/ProductsPage';
 import BasketPage from './components/pages/BasketPage';
 import ProductPageUser from './components/pages/productsUser';
@@ -55,22 +54,18 @@ function App() {
         {
           path: '/',
           element: <MainPage/>,
-        },
-        {
-          path: '/bot',
-          element: <BotPage />,
-        },        
+        },      
         {
           path: '/products',
           element: <ProductPage user={user}/>,
         },
         {
           path: '/productsUser',
-          element: <ProductPageUser/>,
+          element: <ProductPageUser user={user}/>,
         },
         {
           path: '/basket',
-          element: <BasketPage />,
+          element: <BasketPage user={user}/>,
         },
         {
           path: '/login',

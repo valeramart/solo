@@ -9,7 +9,6 @@ async function getLatestProduct(req, res, next) {
     res.locals.product = { title, text, price }
     next()
   } catch (error) {
-    console.log(error)
     res.status(500).send('Ошибка получения последней записи', error.message)
   }
 }

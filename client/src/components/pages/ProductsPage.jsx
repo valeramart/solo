@@ -63,19 +63,19 @@ export default function ProductPage({ user }) {
     }
   }
 
+  async function productInBasket(e, id) {
+    e.preventDefault();
+    try {
+     await axiosInstance.post(`/products/${id}`)
+    } catch (error) {
+      console.log('Ошибка получения', error)
+    }
+  }
+
   return (
     <>
-    {/* {user.role === "ADMIN" ? (
-      <> */}
-        <FormAddProduct inputsHandler={inputsHandler} submitHandler={submitHandler} inputs={inputs}/>
-        <List entries={entries} deleteHandler={deleteHandler}/>
+        <FormAddProduct inputsHandler={inputsHandler} submitHandler={submitHandler} inputs={inputs} />
+        <List entries={entries} deleteHandler={deleteHandler} productInBasket={productInBasket}/>
       </>
-    // ) : (
-    //   <List entries={entries} deleteHandler={deleteHandler}/>
-    // )
-    // }
-    //     {/* <FormAddProduct inputsHandler={inputsHandler} submitHandler={submitHandler} inputs={inputs}/>
-    //     <List entries={entries} deleteHandler={deleteHandler}/> */}
-    // </>
   );
 }

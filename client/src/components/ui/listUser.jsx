@@ -1,6 +1,6 @@
-import EntrieCard from './EntrieCard';
+import EntrieCardUser from './EntrieCardUser';
 
-export default function ListUser({ entries, deleteHandler , productInBasket}) {
+export default function List({ entries, productInBasketUser }) {
   // * key - нужен только реакту
   // ! Сами его мы использовать не можем
   // * key Должен быть:
@@ -12,7 +12,7 @@ export default function ListUser({ entries, deleteHandler , productInBasket}) {
       <h1>Список товаров</h1>
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
         {entries.map((el, i) => (
-          <EntrieCard key={el.id} el={el} deleteHandler={deleteHandler} productInBasket={productInBasket}/>
+          <EntrieCardUser key={el.id} el={el} productInBasketUser={productInBasketUser}/>
         ))}
       </div>
     </>

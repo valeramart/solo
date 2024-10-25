@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('BasketProducts', {
+    await queryInterface.createTable('Baskets', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -18,10 +18,10 @@ module.exports = {
         allowNull: false,
         onDelete: 'CASCADE'
       },
-      basketId: {
+      userId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Baskets',
+          model: 'Users',
           key: 'id'
         },
         allowNull: false,

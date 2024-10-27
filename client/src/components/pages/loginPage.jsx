@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import "bootstrap/dist/css/bootstrap.min.css"
+import style from './loginPage.module.css'
+
 
 function BasicExample({ loginHandler}) {
   // const [showPass, setShowPass] = useState(false);
@@ -18,7 +21,8 @@ function BasicExample({ loginHandler}) {
   };
 
   return (
-    <Form onSubmit={(e) => loginHandler(e, formData)}>
+    <div className={style.form}>
+    <Form onSubmit={(e) => loginHandler(e, formData)} className={style.miniForm}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Адрес электронной почты</Form.Label>
         <Form.Control type="email" name="email" placeholder="Введите адрес электронной почты" value={formData.email}
@@ -36,11 +40,13 @@ function BasicExample({ loginHandler}) {
                 value={formData.password}
                 onChange={handleChange} />
       </Form.Group>
-      <Button variant="primary" type="submit" >
+      <Button variant="primary" type="submit" className={style.button}> 
         Войти
       </Button>
     </Form>
+    </div>
   );
+
 }
 
 export default BasicExample;

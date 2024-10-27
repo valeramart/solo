@@ -9,6 +9,7 @@ import ProductPage from './components/pages/ProductsPage';
 import BasketPage from './components/pages/BasketPage';
 import ProductPageUser from './components/pages/productsUser';
 import axiosInstance, { setAccessToken } from './services/axiosInstance';
+import './index.css';
 
 
 function App() {
@@ -53,7 +54,7 @@ function App() {
       children: [
         {
           path: '/',
-          element: <MainPage/>,
+          element: <MainPage user={user}/>,
         },      
         {
           path: '/products',

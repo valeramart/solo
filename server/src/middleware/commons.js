@@ -9,9 +9,9 @@
   }
   
   function checkReq(req, res, next) {
-    const { text: textQuery, title: titleQuery, price: priceQuery } = req.query
-    const { text: textBody, title: titleBody, price: priceBody } = req.body
-    if ((textQuery && titleQuery && priceQuery) || (textBody && titleBody && priceBody)) {
+    const {  email: emailQuery, name: nameQuery, password: passwordQuery } = req.query
+    const { email: emailBody, name: nameBody, password: passwordBody } = req.body
+    if ((emailQuery && nameQuery && passwordQuery) || (emailBody && nameBody && passwordBody)) {
       next()
     } else {
       res.status(409).send('Все поля должны быть заполнены. Отработала мидлварка!')

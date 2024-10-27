@@ -1,10 +1,12 @@
 import Button from 'react-bootstrap/Button';
   import Form from 'react-bootstrap/Form';
+  import style from './form.module.css'
   
   function formAddProduct({inputsHandler, submitHandler, inputs}) {
 
     return (
-      <Form onSubmit={submitHandler}>
+      <div className={style.form}>
+      <Form onSubmit={submitHandler} className={style.miniForm}>
         <Form.Group className="mb-3" controlId="formBasicTitle">
           <Form.Label>Название</Form.Label>
           <Form.Control name="title" type="text" placeholder="Введите название" onChange={inputsHandler} value={inputs.title}/>
@@ -21,10 +23,11 @@ import Button from 'react-bootstrap/Button';
           <Form.Control name="price" type="text" placeholder="Введите стоимость" onChange={inputsHandler} value={inputs.price}/>
         </Form.Group>
         </Form.Group>
-        <Button variant="primary" type="submit" >
+        <Button variant="primary" type="submit" className={style.button}>
           Добавить
         </Button>
       </Form>
+      </div>
     );
   }
   

@@ -9,8 +9,9 @@ export default function ListUser({ entries, deleteHandler , productInBasket}) {
   // ! индексы в map не используем
   return (
     <>
-      <h1>Список товаров</h1>
-      <div style={{display: 'flex', flexWrap: 'wrap'}}>
+      <h2 style={{marginLeft: '90px', marginTop: '20px'}}>Куда желаете?</h2>
+      <div style={{display: 'flex', flexWrap: 'wrap', marginLeft: '80px',
+      }}>
         {entries.map((el, i) => (
           <EntrieCard key={el.id} el={el} deleteHandler={deleteHandler} productInBasket={productInBasket}/>
         ))}

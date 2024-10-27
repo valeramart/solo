@@ -1,0 +1,22 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(243, 242, 242);
+    width: 1500px;
+    height: 80px;
+}
+
+
+.end{
+    text-align: end;
+    display: flex;
+    justify-content: end;
+}

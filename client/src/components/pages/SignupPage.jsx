@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
+import style from './loginPage.module.css'
+
 
 function BasicExample({signupHandler}) {
   const [formData, setFormData] = useState({
@@ -17,8 +19,9 @@ function BasicExample({signupHandler}) {
     });
 
   return (
-    <Form onSubmit={(e) => signupHandler(e, formData)}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+    <div className={style.form}>
+    <Form onSubmit={(e) => signupHandler(e, formData)} className={style.miniForm}>
+      <Form.Group className="mb-3" controlId="formBasicEmail" >
         <Form.Label>Адрес электронной почты</Form.Label>
         <Form.Control type="email"
               name="email"
@@ -45,10 +48,11 @@ function BasicExample({signupHandler}) {
               value={formData.password}
               onChange={handleChange} />
       </Form.Group>
-      <Button variant="primary" type="submit" >
+      <Button variant="primary" type="submit" className={style.button} >
         Зарегистрироваться
       </Button>
     </Form>
+    </div>
   );
 }
 
